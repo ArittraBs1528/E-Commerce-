@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homefregment">
+
+    <fragment
+        android:id="@+id/homefregment"
+        android:name="com.example.ecommer.screen.home.homefragment"
+        android:label="fragment_homefregment"
+        tools:layout="@layout/fragment_homefregment" />
+    <fragment
+        android:id="@+id/categoryfregment"
+        android:name="com.example.ecommer.screen.category.categoryfregment"
+        android:label="fragment_categoryfregment"
+        tools:layout="@layout/fragment_categoryfregment" />
+</navigation>
