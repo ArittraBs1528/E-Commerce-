@@ -70,83 +70,99 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
-        android:id="@+id/carousel"
-        android:layout_width="match_parent"
-        android:layout_height="256dp"
-        app:autoPlay="true"
-        app:showNavigationButtons="false"
-        app:autoPlayDelay="2000"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        />
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/catcons"
-        app:layout_constraintTop_toBottomOf="@+id/carousel"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#ECEDF4"
-        >
-        <TextView
+
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cattxt"
+            android:layout_height="match_parent">
 
-            android:padding="10dp"
-            android:text="OUR CATEGORIES"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:fontFamily="@font/khand_light"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-             />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rcv1"
-            android:paddingLeft="10dp"
-            app:layout_constraintStart_toStartOf="@id/cattxt"
-            app:layout_constraintTop_toBottomOf="@+id/cattxt"
-            app:layout_constraintEnd_toEndOf="parent"
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/carousel"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:autoPlay="true"
+                app:autoPlayDelay="2000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showNavigationButtons="false"
 
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/besttxt"
 
-        android:layout_marginTop="15dp"
-        android:paddingLeft="10dp"
-        android:text="Best SELLING"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:fontFamily="@font/khand_light"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catcons"
-        />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/catcons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ECEDF4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/carousel">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rcv2"
-        android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/besttxt"
-        />
+                <TextView
+                    android:id="@+id/cattxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/khand_light"
+                    android:padding="10dp"
+                    android:text="OUR CATEGORIES"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/cattxt"
+                    app:layout_constraintTop_toBottomOf="@+id/cattxt"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/besttxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/khand_light"
+                android:paddingLeft="10dp"
+                android:text="Best SELLING"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/catcons" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/besttxt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
