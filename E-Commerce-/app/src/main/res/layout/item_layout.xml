@@ -2,16 +2,19 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="180dp"
-    android:layout_height="290dp"
-    android:layout_margin="16dp"
-    android:elevation="20dp"
-    app:cardCornerRadius="8dp">
+    android:layout_width="172dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:elevation="16dp"
+    android:layout_marginBottom="16dp"
+    android:background="@color/white"
+    app:cardCornerRadius="10dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
 
         <ImageView
             android:id="@+id/imageView6"
@@ -23,20 +26,22 @@
             app:layout_constraintHeight_percent="0.7"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023"
+            app:layout_constraintVertical_bias="0"
             app:srcCompat="@drawable/img" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="California orange 8 pcs"
             android:textSize="14dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <RatingBar
             android:id="@+id/ratingBar3"
@@ -59,6 +64,8 @@
             android:text="$15.00"
             android:textColor="#10CB3C"
             android:textSize="12dp"
+android:layout_marginBottom="4dp"
+            android:id="@+id/priceTxt"
             app:layout_constraintEnd_toEndOf="@id/ratingBar3"
             app:layout_constraintStart_toStartOf="@id/ratingBar3"
             app:layout_constraintTop_toBottomOf="@id/ratingBar3" />
