@@ -17,8 +17,10 @@ import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 class homefragment : Fragment(R.layout.fragment_homefregment) {
 
     private lateinit var binding: FragmentHomefregmentBinding
+    private lateinit var adapter: productAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
@@ -113,15 +115,16 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
 
         binding.rcv2.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rcv2.adapter = productAdapter(bestSellingList)
+        binding.rcv2.adapter = productAdapter(bestSellingList, {
+
+            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
+                .show()
+        }, {
 
 
- 
+            Toast.makeText(requireContext(), "Image button clicked!", Toast.LENGTH_SHORT).show()
 
-
-
-
-
+        })
 
 
         var featureProduction = ArrayList<productDao>()
@@ -143,9 +146,19 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
         )
 
 
-//        binding.rcv3.layoutManager =
-//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        binding.rcv3.adapter = productAdapter(featureProduction)
+
+        binding.rcv3.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rcv3.adapter = productAdapter(featureProduction, {
+
+            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
+                .show()
+        }, {
+
+
+            Toast.makeText(requireContext(), "Image button clicked!", Toast.LENGTH_SHORT).show()
+
+        })
 
         var showProduction = ArrayList<productDao>()
         showProduction.add(
@@ -164,9 +177,19 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
             )
         )
 
-//        binding.rcv4.layoutManager =
-//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        binding.rcv4.adapter = productAdapter(showProduction)
+        binding.rcv4.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rcv4.adapter = productAdapter(featureProduction, {
+
+            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
+                .show()
+        }, {
+
+
+            Toast.makeText(requireContext(), "Image button clicked!", Toast.LENGTH_SHORT).show()
+
+        })
     }
+
 
 }
