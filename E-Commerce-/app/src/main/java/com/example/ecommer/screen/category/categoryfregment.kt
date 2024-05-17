@@ -5,29 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.ecommer.R
+import com.example.ecommer.databinding.FragmentCategoryfregmentBinding
+import com.example.ecommer.databinding.FragmentHomefregmentBinding
+import com.example.ecommer.screen.adapter.categoryAdapter
+import com.example.ecommer.screen.models.categoryDao
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [categoryfregment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class categoryfregment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class categoryfregment : Fragment(R.layout.fragment_categoryfregment) {
+
+    private lateinit var binding: FragmentCategoryfregmentBinding
+    private lateinit var adapter: categoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -38,23 +31,62 @@ class categoryfregment : Fragment() {
         return inflater.inflate(R.layout.fragment_categoryfregment, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment categoryfregment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            categoryfregment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding = FragmentCategoryfregmentBinding.bind(view)
+        super.onViewCreated(view, savedInstanceState)
+
+        var catergoryList = ArrayList<categoryDao>()
+
+
+        //start
+        catergoryList.add(
+            categoryDao(
+                R.drawable.shoe2, "Shoe2"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        catergoryList.add(
+
+            categoryDao(
+                R.drawable.cat2, "Watch"
+            )
+        )
+        //end
+
+
+        binding.catRcv1.layoutManager =
+            StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL)
+        binding.catRcv1.adapter = categoryAdapter(catergoryList)
     }
+
 }

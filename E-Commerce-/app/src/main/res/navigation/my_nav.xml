@@ -15,4 +15,9 @@
         android:name="com.example.ecommer.screen.category.categoryfregment"
         android:label="fragment_categoryfregment"
         tools:layout="@layout/fragment_categoryfregment" />
+    <fragment
+        android:id="@+id/loginfregment"
+        android:name="com.example.ecommer.screen.logIN.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>

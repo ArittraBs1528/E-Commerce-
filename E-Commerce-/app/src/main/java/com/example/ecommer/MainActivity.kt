@@ -1,6 +1,7 @@
 package com.example.ecommers
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,15 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragmentContainerView)
         bottomNavigationView.setupWithNavController(navController)
 
+
+        navController.addOnDestinationChangedListener{_, destination, _ ->
+
+            if(destination.id == R.id.loginfregment ){
+                bottomNavigationView.visibility = View.GONE
+            }else{
+                bottomNavigationView.visibility = View.VISIBLE
+            }
+        }
 
     }
 }
