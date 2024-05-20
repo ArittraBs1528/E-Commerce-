@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homefregment">
+
+    <fragment
+        android:id="@+id/homefregment"
+        android:name="com.example.ecommer.screen.home.homefragment"
+        android:label="fragment_homefregment"
+        tools:layout="@layout/fragment_homefregment" >
+        <action
+            android:id="@+id/action_homefregment_to_productDetails"
+            app:destination="@id/productDetails" />
+        <action
+            android:id="@+id/action_homefregment_to_productListFregement"
+            app:destination="@id/productListFregement" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryfregment"
+        android:name="com.example.ecommer.screen.category.categoryfregment"
+        android:label="fragment_categoryfregment"
+        tools:layout="@layout/fragment_categoryfregment" />
+    <fragment
+        android:id="@+id/loginfregment"
+        android:name="com.example.ecommer.screen.logIN.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/productListFregement"
+        android:name="com.example.ecommer.screen.category.productListFregement"
+        android:label="fragment_product_list_fregement"
+        tools:layout="@layout/fragment_product_list_fregement" />
+    <fragment
+        android:id="@+id/productDetails"
+        android:name="com.example.ecommer.screen.product.ProductDetails"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" />
+</navigation>
