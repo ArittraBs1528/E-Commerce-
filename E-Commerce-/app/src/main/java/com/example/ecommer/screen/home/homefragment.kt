@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommer.R
 import com.example.ecommer.databinding.FragmentHomefregmentBinding
@@ -89,7 +90,12 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
 
         binding.rcv1.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rcv1.adapter = categoryAdapter(catergoryList)
+        binding.rcv1.adapter = categoryAdapter(catergoryList) {
+//            val action = homefragmentDirections.actionHomefregmentToProductListFregement()
+            val action = homefragmentDirections.actionHomefregmentToProductListFregement()
+            findNavController().navigate(action)
+
+        }
 
 
         //for best selling
@@ -116,9 +122,10 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
         binding.rcv2.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rcv2.adapter = productAdapter(bestSellingList, {
+            val action = homefragmentDirections.actionHomefregmentToProductDetails()
+            findNavController().navigate(action)
 
-            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
-                .show()
+
         }, {
 
 
@@ -151,8 +158,8 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rcv3.adapter = productAdapter(featureProduction, {
 
-            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
-                .show()
+            val action = homefragmentDirections.actionHomefregmentToProductDetails()
+            findNavController().navigate(action)
         }, {
 
 
@@ -181,8 +188,8 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rcv4.adapter = productAdapter(featureProduction, {
 
-            Toast.makeText(requireContext(), "Clicked on ${it.productName}", Toast.LENGTH_SHORT)
-                .show()
+            val action = homefragmentDirections.actionHomefregmentToProductDetails()
+            findNavController().navigate(action)
         }, {
 
 

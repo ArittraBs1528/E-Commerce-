@@ -11,7 +11,11 @@ import com.example.ecommer.R
 
 import com.example.ecommer.screen.models.categoryDao
 
-class categoryAdapter(private val itemList: ArrayList<categoryDao>) :
+class categoryAdapter(
+    private val itemList: ArrayList<categoryDao>,
+    private val onClickItem: (categoryDao) -> Unit
+
+) :
     RecyclerView.Adapter<categoryAdapter.categoryViewHolder>() {
     class categoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -33,6 +37,10 @@ class categoryAdapter(private val itemList: ArrayList<categoryDao>) :
     override fun onBindViewHolder(holder: categoryViewHolder, position: Int) {
         holder.image.setImageResource(itemList[position].image)
         holder.text.text = itemList[position].name
+
+        holder.itemView.setOnClickListener {
+            onClickItem(itemList[position])
+        }
     }
 
 }

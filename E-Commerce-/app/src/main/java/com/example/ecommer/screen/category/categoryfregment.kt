@@ -86,7 +86,9 @@ class categoryfregment : Fragment(R.layout.fragment_categoryfregment) {
 
         binding.catRcv1.layoutManager =
             StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL)
-        binding.catRcv1.adapter = categoryAdapter(catergoryList)
+        binding.catRcv1.adapter = categoryAdapter(catergoryList,{
+
+        })
     }
 
 }
