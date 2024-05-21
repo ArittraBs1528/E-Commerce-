@@ -8,10 +8,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommer.R
 import com.example.ecommer.databinding.FragmentHomefregmentBinding
-import com.example.ecommer.screen.adapter.categoryAdapter
-import com.example.ecommer.screen.adapter.productAdapter
+import com.example.ecommer.adapter.categoryAdapter
+import com.example.ecommer.adapter.productAdapter
+import com.example.ecommer.models.CartItemDao
 import com.example.ecommer.screen.adapter.productDao
-import com.example.ecommer.screen.models.categoryDao
+import com.example.ecommer.models.categoryDao
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 
@@ -87,6 +88,18 @@ class homefragment : Fragment(R.layout.fragment_homefregment) {
                 R.drawable.cat4, "Furniture"
             )
         )
+
+        //cart
+
+
+        binding.cartCons.setOnClickListener {
+            var action = homefragmentDirections.actionHomefregmentToCartFragment()
+            findNavController().navigate(action)
+        }
+
+
+        //cart
+
 
         binding.rcv1.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

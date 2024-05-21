@@ -1,4 +1,4 @@
-package com.example.ecommer.screen.adapter
+package com.example.ecommer.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommer.R
+import com.example.ecommer.screen.adapter.productDao
 
 class productAdapter(
     private val itemlist: ArrayList<productDao>,

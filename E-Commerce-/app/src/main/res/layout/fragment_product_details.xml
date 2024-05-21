@@ -7,7 +7,7 @@
     tools:context=".screen.product.ProductDetails">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/productListappBar"
+        android:id="@+id/CartListappBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +77,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cartLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productListappBar">
+        app:layout_constraintTop_toBottomOf="@+id/CartListappBar">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

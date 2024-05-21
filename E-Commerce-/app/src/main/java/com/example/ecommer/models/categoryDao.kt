@@ -1,4 +1,4 @@
-package com.example.ecommer.screen.models
+package com.example.ecommer.models
 
 data class categoryDao(
     var image :Int,

@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.ecommer.R
 import com.example.ecommer.databinding.FragmentHomefregmentBinding
 import com.example.ecommer.databinding.FragmentProductListFregementBinding
-import com.example.ecommer.screen.adapter.productAdapter
+import com.example.ecommer.adapter.productAdapter
 import com.example.ecommer.screen.adapter.productDao
-import com.example.ecommer.screen.models.categoryDao
+import com.example.ecommer.models.categoryDao
 
 
 class productListFregement : Fragment(R.layout.fragment_product_list_fregement) {

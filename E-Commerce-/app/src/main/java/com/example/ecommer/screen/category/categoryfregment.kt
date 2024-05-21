@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.ecommer.R
 import com.example.ecommer.databinding.FragmentCategoryfregmentBinding
 import com.example.ecommer.databinding.FragmentHomefregmentBinding
-import com.example.ecommer.screen.adapter.categoryAdapter
-import com.example.ecommer.screen.models.categoryDao
+import com.example.ecommer.adapter.categoryAdapter
+import com.example.ecommer.models.categoryDao
 
 
 class categoryfregment : Fragment(R.layout.fragment_categoryfregment) {

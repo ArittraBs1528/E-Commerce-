@@ -1,4 +1,4 @@
-package com.example.ecommer.screen.adapter
+package com.example.ecommer.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommer.R
 
-import com.example.ecommer.screen.models.categoryDao
+import com.example.ecommer.models.categoryDao
 
 class categoryAdapter(
     private val itemList: ArrayList<categoryDao>,
